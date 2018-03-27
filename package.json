@@ -2,9 +2,12 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "start:prod": "AOT=1 ROLLUP=1 meteor --production",
     "test": "TEST_BROWSER_DRIVER=phantomjs meteor test --driver-package=ardatan:mocha",
-    "test:ci": "TEST_BROWSER_DRIVER=phantomjs meteor test --driver-package=ardatan:mocha --once"
+    "test:ci": "TEST_BROWSER_DRIVER=phantomjs meteor test --driver-package=ardatan:mocha --once",
+    "postinstall": "npm run styles:install",
+    "prestyles:install": "mkdirp ./client/stylesheets",
+    "styles:install": "npm run ionic-styles:install",
+    "ionic-styles:install": "cpy node_modules/ionic-angular/css/ionic.css client/stylesheets"
   },
   "dependencies": {
     "@angular/common": "^5.2.9",
@@ -15,7 +18,9 @@
     "@angular/platform-browser-dynamic": "^5.2.9",
     "@angular/router": "^5.2.9",
     "@babel/runtime": "^7.0.0-beta.42",
+    "@ionic-native/core": "^4.6.0",
     "core-js": "^2.5.3",
+    "ionic-angular": "^3.9.2",
     "meteor-node-stubs": "~0.3.3",
     "meteor-rxjs": "^0.4.10",
     "rxjs": "^5.5.7",
@@ -28,6 +33,8 @@
     "@types/mocha": "^2.2.48",
     "@types/sinon": "^4.3.0",
     "chai": "^4.1.2",
+    "cpy-cli": "^1.0.1",
+    "mkdirp": "^0.5.1",
     "phantomjs-prebuilt": "^2.1.16",
     "sinon": "^4.4.6",
     "typescript": "^2.7.2"

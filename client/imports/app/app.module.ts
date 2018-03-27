@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
 
+import { IonicApp, IonicModule/*, IonicErrorHandler*/ } from 'ionic-angular';
+
 import { AppComponent } from './app.component';
 import { TodoAddComponent } from './todo-add/todo-add.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
@@ -15,6 +17,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   imports: [
     BrowserModule,
     FormsModule,
+    IonicModule.forRoot(AppComponent),
     RouterModule.forRoot([
       {
         path: 'todoList',
@@ -44,6 +47,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PageNotFoundComponent
   ],
   bootstrap: [
+    IonicApp,
     AppComponent
   ]
 })
