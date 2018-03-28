@@ -1,10 +1,13 @@
 # Angular Meteor Universal without AOT
-This project shows the usage of *@angular* with *Meteor*
 
-How-to
+This project shows the usage of *Ionic* with *Angular* and *Meteor*.
+
+It's a POC about running such a configuration with vanilla JS and no "@" annotations.
+
+Creation
 --
 
-Clone such a template project from [Angular Meteor bare template](https://github.com/Urigo/angular-meteor/tree/master/examples/MeteorCLI/bare): 
+Clone the example from [Angular Meteor bare](https://github.com/Urigo/angular-meteor/tree/master/examples/MeteorCLI/bare): 
 
 ```bash
 # Download the project template
@@ -22,7 +25,12 @@ git commit -m 'Retrieve project template "bare" as it'
 # Download the 'npm' dependencies
 
 meteor npm install
+```
 
+Running
+--
+
+```bash
 # Download the 'atmosphere' dependencies and run
 
 meteor

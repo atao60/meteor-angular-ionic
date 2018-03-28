@@ -17,5 +17,4 @@ Meteor.startup(() => {
     console.log("Printed only in mobile Cordova apps");
   }  
 
-
 });
